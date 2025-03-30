@@ -9,11 +9,6 @@ class Beer(BaseModel):
     quantity: int
 
 
-class OrderItem(BaseModel):
-    name: str
-    quantity: int
-
-
 class Order(BaseModel):
     id: int
     created: datetime
@@ -21,7 +16,7 @@ class Order(BaseModel):
     subtotal: int
     taxes: int
     discounts: int
-    items: List[OrderItem]
+    items: List[Beer]
 
 
 class StockResponse(BaseModel):

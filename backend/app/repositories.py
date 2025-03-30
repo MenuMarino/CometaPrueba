@@ -27,7 +27,9 @@ def create_order(order_data: Dict[str, int]) -> Order:
             beer = stock[beer_name]
             if beer.quantity >= quantity:
                 beer.quantity -= quantity
-                items.append({"name": beer.name, "quantity": quantity})
+                items.append(
+                    {"name": beer.name, "quantity": quantity, "price": beer.price}
+                )
             else:
                 raise ValueError(
                     f"Not enough stock for {beer_name}. Only {beer.quantity} left."
