@@ -3,9 +3,9 @@ from app.schemas import Beer, Order, StockResponse
 from typing import List, Dict
 
 stock: Dict[str, Beer] = {
-    "Corona": Beer(name="Corona", price=115, quantity=2),
-    "Quilmes": Beer(name="Quilmes", price=120, quantity=0),
-    "Club Colombia": Beer(name="Club Colombia", price=110, quantity=3),
+    "Corona": Beer(name="Corona", price=115, quantity=10),
+    "Quilmes": Beer(name="Quilmes", price=120, quantity=10),
+    "Club Colombia": Beer(name="Club Colombia", price=110, quantity=10),
 }
 
 orders: Dict[int, Order] = {}

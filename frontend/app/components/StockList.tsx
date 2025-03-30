@@ -1,10 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
-import { fetchStock } from "@/app/lib/api";
-import { Beer } from "@/app/types";
+import { fetchStock } from "@/lib/api";
+import { Beer } from "@/types";
 import OrderButton from "./OrderButton";
 
-export default function StockList() {
+export default function StockList({
+  onOrderCreated,
+}: {
+  onOrderCreated: () => void;
+}) {
   const [stock, setStock] = useState<Beer[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -42,7 +46,10 @@ export default function StockList() {
         </button>
       </div>
 
-      <OrderButton onOrderCreated={loadStock} />
+      <OrderButton onOrderCreated={() => {
+        loadStock();
+        onOrderCreated();
+      }} />
 
       <table className="w-full text-left border border-gray-200">
         <thead>

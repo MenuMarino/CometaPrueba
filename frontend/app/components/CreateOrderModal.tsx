@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { fetchStock, createOrder } from "@/app/lib/api";
-import { Beer } from "@/app/types";
+import { fetchStock, createOrder } from "@/lib/api";
+import { Beer } from "@/types";
 
 export default function CreateOrderModal({
   onClose,
@@ -36,7 +36,8 @@ export default function CreateOrderModal({
   };
 
   const handleSubmit = async () => {
-    if (Object.keys(selection).length === 0) {
+    const total = Object.values(selection).reduce((sum, current) => sum + current, 0)
+    if (Object.keys(selection).length === 0 || total <= 0) {
       setError("Debes seleccionar al menos una cerveza.");
       return;
     }
