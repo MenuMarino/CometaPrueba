@@ -20,6 +20,10 @@ Para ejecutar las pruebas unitarias se debe ejecutar `pytest`.
 2. Crear un archivo `.env.local` con la ruta del backend: `NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8000`
 3. Iniciar el frontend utilizando `npm run dev` y en el navegador abrir `http://localhost:3000/`
 
+## Demostracion
+
+El video la ejecucion del proyecto se encuentra en [este archivo](media/demostracion.mkv) y tambien se puede visualizar en [Google Drive](https://drive.google.com/file/d/13cVNJw_QDx2o99S4AaDpGLoMhf85ExMD/view?usp=sharing)
+
 ## API Endpoints
 
 ### `/api/stock` — `GET`
